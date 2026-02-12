@@ -3,6 +3,8 @@
 Sub-millisecond, Kafka-compatible message broker written in C++20.
 Zero dependencies. Single binary. Drop-in Kafka replacement for development and testing.
 
+**v0.1.5** — Sharded locks, circular I/O buffers, optional io_uring kernel bypass (Linux). Measured **4.4μs p99.9** log append latency.
+
 ## Quick Start
 
 ```bash
@@ -17,6 +19,7 @@ Any Kafka client can connect to `127.0.0.1:9092`. REST API available at `127.0.0
 |---|---|---|
 | Binary size | ~200MB+ (JVM + libs) | 52KB |
 | Startup time | 10-30 seconds | < 10ms |
+| Produce p99.9 | ~5-10ms | 4.4μs |
 | Idle CPU | 1-5% (JVM GC) | 0% |
 | Memory | 1-2GB minimum | ~1MB |
 | Dependencies | JVM, ZooKeeper/KRaft | None |
